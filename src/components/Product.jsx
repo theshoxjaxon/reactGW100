@@ -52,7 +52,7 @@ function Product() {
     }
 
     return (
-        <div className="products-grid">
+        <div className="products-grid flex justify-between gap-0.5">
             {products.map(product => (
                 <div
                     key={product.id}

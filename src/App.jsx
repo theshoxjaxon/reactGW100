@@ -1,11 +1,14 @@
 import React from 'react'
-import List from "./components/List"
+import Box from './components/Box'
 import Product from "./components/Product"
 const App = () => {
   return (
     <div>
-      <List />
+      <Box text="Salom Tailwind" />
+      <Box text="Salom JavaScript" />
       <Product />
+
+
     </div>
   )
 }
