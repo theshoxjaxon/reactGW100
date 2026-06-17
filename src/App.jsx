@@ -1,14 +1,13 @@
 import React from 'react'
-import Box from './components/Box'
-import Product from "./components/Product"
+import Hero from './components/Hero'
+import Profile from './components/Profile'
+import Welcome from './components/Welcome'
+import Notification from './components/Notification'
+import Counter from './components/Counter'
 const App = () => {
   return (
     <div>
-      <Box text="Salom Tailwind" />
-      <Box text="Salom JavaScript" />
-      <Product />
-
-
+      <Counter />
     </div>
   )
 }
