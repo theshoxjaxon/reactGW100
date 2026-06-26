@@ -8,12 +8,13 @@ import Inputs from './components/Inputs'
 import Form from './components/Form'
 import Test from './components/Test'
 import FormTest from './components/FormTest'
+import UseEffectTest from './components/UseEffectTest'
 const App = () => {
   return (
     <div>
       {/* <Inputs /> */}
-      <FormTest />
-
+      {/* <FormTest /> */}
+      <UseEffectTest />
     </div>
   )
 }
