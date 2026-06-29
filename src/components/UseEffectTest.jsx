@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const UseEffectTest = () => {
+
     const [count, setCount] = useState(0);
-    const prevCountRef = useRef(0);
+    const perfCount = useRef(0);
 
     useEffect(() => {
         // 1. Obyekt emas, uning 'current' qiymatini solishtiramiz
-        const prev = prevCountRef.current;
+        const prev = perfCount.current;
 
         if (count > prev) {
             alert("Increased");
@@ -15,10 +16,11 @@ const UseEffectTest = () => {
         } else if (count === 0) {
             alert("Restarted");
         }
-
         // 2. MUHIM: Har renderdan keyin ref qiymatini yangilaymiz
-        prevCountRef.current = count;
+        perfCount.current = count;
     }, [count]);
+
+
 
     return (
         <div className='flex justify-center w-full h-[100vh] items-center gap-3.5'>

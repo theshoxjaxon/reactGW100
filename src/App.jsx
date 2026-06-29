@@ -9,12 +9,14 @@ import Form from './components/Form'
 import Test from './components/Test'
 import FormTest from './components/FormTest'
 import UseEffectTest from './components/UseEffectTest'
+import Navbar from './components/Navbar'
 const App = () => {
   return (
     <div>
       {/* <Inputs /> */}
       {/* <FormTest /> */}
-      <UseEffectTest />
+      <Navbar />
+
     </div>
   )
 }
