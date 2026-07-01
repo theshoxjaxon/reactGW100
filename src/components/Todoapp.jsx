@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { set } from 'react-hook-form';
 
 const Todoapp = () => {
     const [todos, setTodos] = useState([]);
@@ -17,7 +18,14 @@ const Todoapp = () => {
             text: todoInput,
         };
         setTodos([...todos, newTodo]);
+
+
     }
+    const removeTodo = (id) => {
+        const updatedTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(updatedTodos);
+    }
+
 
     return (
         <div>
@@ -27,14 +35,17 @@ const Todoapp = () => {
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Add</button>
             </form>
 
+
+
             <div className="todo-list mt-5 flex flex-col items-center justify-center">
                 {loading && <p>Loading...</p>}
                 <ul className="w-full max-w-md">
-                    <li className="mb-5 bg-gray-100 p-2 rounded text-gray-700 text-center "> {todos.map((todo) => (
-                        <div className="m-2" key={todo.id}>
+                    <li className="mb-5  p-2 rounded text-gray-700 text-center "> {todos.map((todo) => (
+                        <div className="m-2 bg-gray-200 hover:bg-gray-300" key={todo.id} onClick={() => removeTodo(todo.id)}>
                             <span>{todo.text}</span>
                         </div>
                     ))} </li>
+                    <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => setTodos([])}>Clear All</button>
 
                 </ul>
             </div>
