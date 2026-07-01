@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-    df
+
     useEffect(() => {
         const getData = async () => {
             try {
