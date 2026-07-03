@@ -11,13 +11,14 @@ import FormTest from './components/FormTest'
 import UseEffectTest from './components/UseEffectTest'
 import Navbar from './components/Navbar'
 import Todoapp from './components/Todoapp'
+
 const App = () => {
   return (
     <div>
       {/* <Inputs /> */}
       {/* <FormTest /> */}
-
       <Todoapp />
+
 
     </div>
   )
