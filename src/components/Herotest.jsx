@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react'
 
 const NODES = [
-    { x: 250, y: 300, r: 26, avatar: 'https://randomuser.me/api/portraits/women/65.jpg', ar: 22 },
-    { x: 900, y: 430, r: 30, avatar: 'https://randomuser.me/api/portraits/men/32.jpg', ar: 24 },
-    { x: 1150, y: 330, r: 24, avatar: 'https://randomuser.me/api/portraits/men/85.jpg', ar: 20 },
-    { x: 1430, y: 360, r: 15, avatar: 'https://randomuser.me/api/portraits/women/44.jpg', ar: 14 },
+    { x: 250, y: 360, r: 26, avatar: 'https://randomuser.me/api/portraits/women/65.jpg', ar: 22 },
+    { x: 950, y: 470, r: 30, avatar: 'https://randomuser.me/api/portraits/men/32.jpg', ar: 24 },
+    { x: 1180, y: 380, r: 24, avatar: 'https://randomuser.me/api/portraits/men/85.jpg', ar: 20 },
+    { x: 1450, y: 400, r: 15, avatar: 'https://randomuser.me/api/portraits/women/44.jpg', ar: 14 },
 ]
 
 const ARCS = [
-    'M 250 300 Q 620 40 900 430',
-    'M 900 430 Q 1030 210 1150 330',
-    'M 1150 330 Q 1300 230 1430 360',
+    'M 250 360 Q 620 80 950 470',
+    'M 950 470 Q 1070 260 1180 380',
+    'M 1180 380 Q 1320 290 1450 400',
 ]
 
 const BitcoinSphere = () => {
@@ -35,7 +35,7 @@ const BitcoinSphere = () => {
     }, [])
 
     return (
-        <svg viewBox="0 0 560 560" className="w-full max-w-130" aria-hidden="true">
+        <svg viewBox="0 0 560 560" className="w-full max-w-120" aria-hidden="true">
             <defs>
                 <linearGradient id="btcGrad" x1="0" y1="0" x2="1" y2="1">
                     <stop offset="0" stopColor="#8c93f2" />
@@ -62,12 +62,12 @@ const BitcoinSphere = () => {
 const Waves = () => {
     const lines = useMemo(() => {
         const hill = (x) =>
-            70 * Math.sin(x / 300 + 1) + 55 * Math.sin(x / 150 + 3) + 30 * Math.sin(x / 75)
+            45 * Math.sin(x / 300 + 1) + 35 * Math.sin(x / 150 + 3) + 20 * Math.sin(x / 75)
         const paths = []
         for (let i = 0; i < 42; i++) {
             const pts = []
             for (let x = 0; x <= 1600; x += 25) {
-                const y = 200 + i * 5.2 + hill(x + i * 4) * (0.55 + i * 0.004)
+                const y = 300 + i * 4.5 + hill(x + i * 4) * (0.5 + i * 0.004)
                 pts.push(`${x},${y.toFixed(1)}`)
             }
             paths.push(pts.join(' '))
@@ -79,7 +79,7 @@ const Waves = () => {
         <svg
             viewBox="0 0 1600 540"
             preserveAspectRatio="xMidYMax slice"
-            className="h-75 w-full lg:h-110"
+            className="h-56 w-full lg:h-80"
             aria-hidden="true"
         >
             <defs>
