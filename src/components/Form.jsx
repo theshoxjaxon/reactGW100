@@ -5,14 +5,15 @@ const Form = () => {
     const [country, setCountry] = useState("O'zbekiston")
     return (
         <div>
-            <h1>{country}</h1>
+            {/* <h1>{country}</h1>
             <select value={country} onChange={(e) => setCountry(e.target.value)}>
                 <option value="Thailand">Thailand</option>
                 <option value="UAE">UAE</option>
                 <option value="Shvetsariya">Shvetsariya</option>
 
 
-            </select>
+            </select> */}
+            <img src={heroPng} alt="hero" />
         </div>
         // <div>
         //     <h1>{agreed ? "true" : "false"}</h1>
