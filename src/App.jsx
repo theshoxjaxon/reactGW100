@@ -4,6 +4,7 @@ import Navbartest from './components/Navbartest'
 import Herotest from './components/Herotest'
 import Error from './components/Error'
 import Box from './components/Box'
+import Pokemon from './components/Pokemon'
 
 // const Page = () => {
 //   const { page } = useParams()
@@ -37,7 +38,8 @@ const App = () => {
     //   </div>
     // </BrowserRouter>
     <div>
-      <Box />
+      {/* <Box /> */}
+      <Pokemon />
     </div>
   )
 }
