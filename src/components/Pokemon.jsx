@@ -6,43 +6,35 @@ const Pokemon = () => {
     const [pokemons, setPokemons] = useState([])
 
     useEffect(() => {
-        const HandleSubmit = () =>{
-            axios.post("jsonplaceholder.typicode.com/posts", {
-                title: "foo",
-                body: "bar",
-                userId: 1,
-            })
-            .then((response) => {
-                console.log(response.data)
-            })
-            .catch((error) => {
-                console.error(error)
-            })
-        }
+
 
         const fetchData = async () => {
             try {
-                const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=10")
-                setPokemons(response.data.results)
+                const response = await axios.get("https://jsonplaceholder.typicode.com/users")
+                setPokemons(response.data)
             } catch (error) {
                 console.error(error)
             }
         }
 
         fetchData()
-        HandleSubmit()
 
     }, [])
     return (
         <div>
-            <h1 className="text-4xl font-bold mb-4 text-center text-white">Pokemons</h1>
+            <h1 className="text-4xl font-bold mb-4 text-center text-white">Users</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-                {pokemons.map((pokemon, index) => (
-                    <div key={index} className="box mb-4 p-4 border border-gray-300 rounded-lg shadow-md">
-                        <h2 className="text-lg font-semibold mt-2 text-white text-xl text-center">{pokemon.name}</h2>
+                {pokemons.map((pokemon) => (
+                    <div key={pokemon.id} className="box mb-4 p-4 border border-gray-300 rounded-lg shadow-md">
+                        <h2 className="text-lg font-semibold mt-2 text-amber-50 text-xl text-center">{pokemon.name}</h2>
+                        <p className="text-gray-700 mt-2 text-center">{pokemon.email}</p>
+                        <div className="flex items-center justify-between mt-2">
+                            <p className="text-white mt-2 text-center font-bold">{pokemon.username}</p>
+                            <p className="text-yellow-500 mt-2 text-center">Phone: {pokemon.phone}</p>
+                        </div>
                     </div>
                 ))}
-            </div>  
+            </div>
         </div>
     )
 }
