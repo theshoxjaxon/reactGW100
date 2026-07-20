@@ -5,7 +5,7 @@ import Herotest from './components/Herotest'
 import Error from './components/Error'
 import Box from './components/Box'
 import Pokemon from './components/Pokemon'
-
+import Converter from './components/Converter'
 // const Page = () => {
 //   const { page } = useParams()
 
@@ -39,7 +39,8 @@ const App = () => {
     // </BrowserRouter>
     <div>
       {/* <Box /> */}
-      <Pokemon />
+      {/* <Pokemon /> */}
+      <Converter />
     </div>
   )
 }
