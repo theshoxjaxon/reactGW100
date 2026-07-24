@@ -6,6 +6,7 @@ import Error from './components/Error'
 import Box from './components/Box'
 import Pokemon from './components/Pokemon'
 import Converter from './components/Converter'
+import Users from './components/Users'
 // const Page = () => {
 //   const { page } = useParams()
 
@@ -40,7 +41,9 @@ const App = () => {
     <div>
       {/* <Box /> */}
       {/* <Pokemon /> */}
-      <Converter />
+      {/* <Converter /> */}
+
+      < Users />
     </div>
   )
 }
