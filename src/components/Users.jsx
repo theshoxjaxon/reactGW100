@@ -44,6 +44,7 @@ const Users = () => {
         setEditingId(userId)
         setEditText(user.name)
     }
+    A
 
     const saveUser = (userId) => {
         setData(data.map((u) => (u.id === userId ? { ...u, name: editText } : u)))
@@ -77,6 +78,7 @@ const Users = () => {
                             <>
                                 <p>{user.name}</p>
                                 <button onClick={() => editUser(user.id)} className='border border-pink-300 p-2 bg-amber-400 rounded-2xl'>edit</button>
+                                <button onClick={() => deleteUser(user.id)} className='border-pink-300 border bg-red-500' >Delete</button>
                             </>
                         )}
                     </div>
